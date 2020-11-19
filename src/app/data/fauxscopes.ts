@@ -15,6 +15,20 @@ const fauxscopes: IScope[] = [
         astronomicalEndMonth: 5,
         duration: 25
     },
+    {
+        sign: 'Taurus',
+        signImageUrl: 'assets/Taurus.svg',
+        meaning: 'The Bull',
+        astrologicalStartDay: 21,
+        astrologicalStartMonth: 4,
+        astrologicalEndDay: 21,
+        astrologicalEndMonth: 5,
+        astronomicalStartDay: 15,
+        astronomicalStartMonth: 5,
+        astronomicalEndDay: 21,
+        astronomicalEndMonth: 6,
+        duration: 38
+    },
 ];
 
 export { fauxscopes };
