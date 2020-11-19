@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IScope } from '../models/iscope';
 import { fauxscopes } from '../data/fauxscopes';
+import { features } from 'process';
 
 @Injectable({
   providedIn: 'root'
@@ -17,13 +18,11 @@ export class FauxScopeService {
     const day = birthDate.getDate();
     const month = birthDate.getMonth() + 1;
 
-    const faux = this.fauxScopes.find(fs =>
-      (day >= fs.astrologicalStartDay ||
-      day <= fs.astrologicalEndDay) &&
-      (month === fs.astrologicalStartMonth ||
-      month === fs.astronomicalEndMonth)
-    );
-
-    return faux;
+    for (const faux of this.fauxScopes) {
+      if ((day >=  faux.astrologicalStartDay && month === faux.astrologicalStartMonth)
+        || (day <= faux.astrologicalEndDay && month === faux.astrologicalEndMonth)) {
+          return faux;
+        }
+    }
   }
 }
