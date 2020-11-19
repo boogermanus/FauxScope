@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-
+import { SignConstants } from '../models/constants';
 import { FauxScopeService } from './faux-scope.service';
 
 describe('FauxScopeService', () => {
@@ -23,6 +23,12 @@ describe('FauxScopeService', () => {
       const result = service.getFauxScopes(new Date());
 
       expect(result.length).toEqual(2);
+    });
+
+    it('should return Aries start Astrological', () => {
+      const result = service.getFauxScopes(new Date('03/21/01'))[SignConstants.Astrological];
+
+      expect(result.sign).toEqual('Aries');
     });
   });
 });
