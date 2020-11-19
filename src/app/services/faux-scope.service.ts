@@ -18,11 +18,11 @@ export class FauxScopeService {
     const day = birthDate.getDate();
     const month = birthDate.getMonth() + 1;
 
-    for (const faux of this.fauxScopes) {
+    return this.fauxScopes.find(faux => {
       if ((day >=  faux.astrologicalStartDay && month === faux.astrologicalStartMonth)
-        || (day <= faux.astrologicalEndDay && month === faux.astrologicalEndMonth)) {
-          return faux;
-        }
-    }
+      || (day <= faux.astrologicalEndDay && month === faux.astrologicalEndMonth)) {
+        return faux;
+      }
+    });
   }
 }

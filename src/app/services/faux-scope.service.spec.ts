@@ -42,5 +42,11 @@ describe('FauxScopeService', () => {
 
       expect(result.sign).toEqual('Taurus');
     });
+
+    it('should return Taurus end Astrological', () => {
+      const result = service.getFauxScopes(new Date('5/21/01'))[SignConstants.Astrological];
+
+      expect(result.sign).toEqual('Taurus');
+    });
   });
 });
