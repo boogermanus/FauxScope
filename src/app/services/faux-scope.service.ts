@@ -10,18 +10,20 @@ export class FauxScopeService {
   constructor() { }
 
   public getFauxScopes(birthDate: Date): IScope[] {
-    return [fauxscopes[0], fauxscopes[1]];
+    return [this.getAstrological(birthDate), fauxscopes[1]];
   }
 
   private getAstrological(birthDate: Date): IScope {
     const day = birthDate.getDate();
     const month = birthDate.getMonth() + 1;
 
-    return this.fauxScopes.find(fs => {
-      return fs.astrologicalStartDay >= day &&
-      fs.astrologicalStartMonth >= month &&
-      fs.astrologicalEndDay <= day &&
-      fs.astrologicalEndMonth <= month;
-    });
+    const faux = this.fauxScopes.find(fs =>
+      (day >= fs.astrologicalStartDay ||
+      day <= fs.astrologicalEndDay) &&
+      (month === fs.astrologicalStartMonth ||
+      month === fs.astronomicalEndMonth)
+    );
+
+    return faux;
   }
 }

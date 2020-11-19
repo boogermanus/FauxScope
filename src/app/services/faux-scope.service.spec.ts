@@ -30,5 +30,17 @@ describe('FauxScopeService', () => {
 
       expect(result.sign).toEqual('Aries');
     });
+
+    it('should return Aries end Astrological', () => {
+      const result = service.getFauxScopes(new Date('04/20/01'))[SignConstants.Astrological];
+
+      expect(result.sign).toEqual('Aries');
+    });
+
+    it('should return Taurus start Astrological', () => {
+      const result = service.getFauxScopes(new Date('04/21/01'))[SignConstants.Astrological];
+
+      expect(result.sign).toEqual('Taurus');
+    });
   });
 });
