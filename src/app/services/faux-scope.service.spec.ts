@@ -140,6 +140,18 @@ describe('FauxScopeService', () => {
         expect(result.sign).toEqual('Sagittarius');
       });
 
+      it('should return Capricorn start Astrological', () => {
+        const result = service.getFauxScopes(new Date('12/23/01'))[SignConstants.Astrological];
+
+        expect(result.sign).toEqual('Capricorn');
+      });
+
+      it('should return Capricorn end Astrological', () => {
+        const result = service.getFauxScopes(new Date('01/20/01'))[SignConstants.Astrological];
+
+        expect(result.sign).toEqual('Capricorn');
+      });
+
     });
 
     describe('Astronomical', () => {
