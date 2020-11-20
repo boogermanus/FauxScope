@@ -62,6 +62,18 @@ describe('FauxScopeService', () => {
         expect(result.sign).toEqual('Gemini');
       });
 
+      it('should return Cancer start Astrological', () => {
+        const result = service.getFauxScopes(new Date('06/22/01'))[SignConstants.Astrological];
+
+        expect(result.sign).toEqual('Cancer');
+      });
+
+      it('should return Cancer end Astrological', () => {
+        const result = service.getFauxScopes(new Date('07/22/01'))[SignConstants.Astrological];
+
+        expect(result.sign).toEqual('Cancer');
+      });
+
     });
 
     describe('Astronomical', () => {
