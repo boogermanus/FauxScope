@@ -64,7 +64,7 @@ const fauxscopes: IScope[] = [
         astrologicalStartDay: 23,
         astrologicalStartMonth: 7,
         astrologicalEndDay: 23,
-        astrologicalEndMonth: 7,
+        astrologicalEndMonth: 8,
         astronomicalStartDay: 11,
         astronomicalStartMonth: 8,
         astronomicalEndDay: 16,
