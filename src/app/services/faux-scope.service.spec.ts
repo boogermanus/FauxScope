@@ -110,6 +110,30 @@ describe('FauxScopeService', () => {
         expect(result.sign).toEqual('Libra');
       });
 
+      it('should return Scorpius start Astrological', () => {
+        const result = service.getFauxScopes(new Date('10/24/01'))[SignConstants.Astrological];
+
+        expect(result.sign).toEqual('Scorpius');
+      });
+
+      it('should return Scorpius end Astrological', () => {
+        const result = service.getFauxScopes(new Date('11/22/01'))[SignConstants.Astrological];
+
+        expect(result.sign).toEqual('Scorpius');
+      });
+
+      it('should not return Ophiuchus', () => {
+        const result = service.getFauxScopes(new Date('12/01/01'))[SignConstants.Astrological];
+
+        expect(result.sign).not.toEqual('Ophiuchus');
+      });
+
+      it('should return Sagittarius start Astrological', () => {
+        const result = service.getFauxScopes(new Date('11/23/01'))[SignConstants.Astrological];
+
+        expect(result.sign).toEqual('Sagittarius');
+      })
+
     });
 
     describe('Astronomical', () => {
