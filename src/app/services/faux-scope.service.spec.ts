@@ -74,6 +74,42 @@ describe('FauxScopeService', () => {
         expect(result.sign).toEqual('Cancer');
       });
 
+      it('should return Leo start Astrological', () => {
+        const result = service.getFauxScopes(new Date('07/23/01'))[SignConstants.Astrological];
+
+        expect(result.sign).toEqual('Leo');
+      });
+
+      it('should return Leo end Astrological', () => {
+        const result = service.getFauxScopes(new Date('08/23/01'))[SignConstants.Astrological];
+
+        expect(result.sign).toEqual('Leo');
+      });
+
+      it('should return Virgo start Astrological', () => {
+        const result = service.getFauxScopes(new Date('08/24/01'))[SignConstants.Astrological];
+
+        expect(result.sign).toEqual('Virgo');
+      });
+
+      it('should return Virgo end Astrological', () => {
+        const result = service.getFauxScopes(new Date('09/22/01'))[SignConstants.Astrological];
+
+        expect(result.sign).toEqual('Virgo');
+      });
+
+      it('should return Libra start Astrological', () => {
+        const result = service.getFauxScopes(new Date('09/23/01'))[SignConstants.Astrological];
+
+        expect(result.sign).toEqual('Libra');
+      });
+
+      it('should return Libra end Astrological', () => {
+        const result = service.getFauxScopes(new Date('10/23/01'))[SignConstants.Astrological];
+
+        expect(result.sign).toEqual('Libra');
+      });
+
     });
 
     describe('Astronomical', () => {
