@@ -132,7 +132,13 @@ describe('FauxScopeService', () => {
         const result = service.getFauxScopes(new Date('11/23/01'))[SignConstants.Astrological];
 
         expect(result.sign).toEqual('Sagittarius');
-      })
+      });
+
+      it('should return Sagittarius end Astrological', () => {
+        const result = service.getFauxScopes(new Date('12/22/01'))[SignConstants.Astrological];
+
+        expect(result.sign).toEqual('Sagittarius');
+      });
 
     });
 
