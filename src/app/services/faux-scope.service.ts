@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IScope } from '../models/iscope';
 import { fauxscopes } from '../data/fauxscopes';
-import { features } from 'process';
 
 @Injectable({
   providedIn: 'root'
