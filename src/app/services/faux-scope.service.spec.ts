@@ -152,6 +152,30 @@ describe('FauxScopeService', () => {
         expect(result.sign).toEqual('Capricorn');
       });
 
+      it('should return Aquarius start Astrological', () => {
+        const result = service.getFauxScopes(new Date('01/21/01'))[SignConstants.Astrological];
+
+        expect(result.sign).toEqual('Aquarius');
+      });
+
+      it('should return Aquarius end Astrological', () => {
+        const result = service.getFauxScopes(new Date('02/19/01'))[SignConstants.Astrological];
+
+        expect(result.sign).toEqual('Aquarius');
+      });
+
+      it('should return Pisces start Astrological', () => {
+        const result = service.getFauxScopes(new Date('02/20/01'))[SignConstants.Astrological];
+
+        expect(result.sign).toEqual('Pisces');
+      });
+
+      it('should return Pisces end Astrological', () => {
+        const result = service.getFauxScopes(new Date('03/20/01'))[SignConstants.Astrological];
+
+        expect(result.sign).toEqual('Pisces');
+      });
+
     });
 
     describe('Astronomical', () => {
