@@ -198,9 +198,45 @@ describe('FauxScopeService', () => {
       });
 
       it('should return Taurus end Astronomical', () => {
-        const result = service.getFauxScopes(new Date('6/21/01'))[SignConstants.Astronomical];
+        const result = service.getFauxScopes(new Date('06/21/01'))[SignConstants.Astronomical];
 
         expect(result.sign).toEqual('Taurus');
+      });
+
+      it('should return Gemini start Astronomical', () => {
+        const result = service.getFauxScopes(new Date('06/22/01'))[SignConstants.Astronomical];
+
+        expect(result.sign).toEqual('Gemini');
+      });
+
+      it('should return Gemini end Astronomical', () => {
+        const result = service.getFauxScopes(new Date('07/20/01'))[SignConstants.Astronomical];
+
+        expect(result.sign).toEqual('Gemini');
+      });
+
+      it('should return Cancer start Astronomical', () => {
+        const result = service.getFauxScopes(new Date('07/21/01'))[SignConstants.Astronomical];
+
+        expect(result.sign).toEqual('Cancer');
+      });
+
+      it('should return Cancer end Astronomical', () => {
+        const result = service.getFauxScopes(new Date('08/10/01'))[SignConstants.Astronomical];
+
+        expect(result.sign).toEqual('Cancer');
+      });
+
+      it('should return Leo start Astronomical', () => {
+        const result = service.getFauxScopes(new Date('08/11/01'))[SignConstants.Astronomical];
+
+        expect(result.sign).toEqual('Leo');
+      });
+
+      it('should return Leo end Astronomical', () => {
+        const result = service.getFauxScopes(new Date('09/16/01'))[SignConstants.Astronomical];
+
+        expect(result.sign).toEqual('Leo');
       });
     });
   });

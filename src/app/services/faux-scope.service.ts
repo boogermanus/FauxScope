@@ -33,12 +33,16 @@ export class FauxScopeService {
   private getAstronomical(birthDate: Date): IScope {
     const day = birthDate.getDate();
     const month = this.getMonth(birthDate);
+    
+    let bestMatch = null;
 
-    return this.fauxScopes.find(faux => {
+    for (const faux of this.fauxScopes) {
       if ((day >=  faux.astronomicalStartDay && month === faux.astronomicalStartMonth)
       || (day <= faux.astronomicalEndDay && month === faux.astronomicalEndMonth)) {
-        return faux;
+        bestMatch = faux;
       }
-    });
+    }
+
+    return bestMatch;
   }
 }
