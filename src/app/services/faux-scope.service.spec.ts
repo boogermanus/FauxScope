@@ -250,6 +250,18 @@ describe('FauxScopeService', () => {
 
         expect(result.sign).toEqual('Virgo');
       });
+
+      it('should return Libra start Astronomical', () => {
+        const result = service.getFauxScopes(new Date('11/01/01'))[SignConstants.Astronomical];
+
+        expect(result.sign).toEqual('Libra');
+      });
+
+      it('should return Libra end Astronomical', () => {
+        const result = service.getFauxScopes(new Date('11/23/01'))[SignConstants.Astronomical];
+
+        expect(result.sign).toEqual('Libra');
+      });
     });
   });
 });
