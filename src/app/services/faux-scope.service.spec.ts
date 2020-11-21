@@ -238,6 +238,18 @@ describe('FauxScopeService', () => {
 
         expect(result.sign).toEqual('Leo');
       });
+
+      it('should return Virgo start Astronomical', () => {
+        const result = service.getFauxScopes(new Date('09/17/01'))[SignConstants.Astronomical];
+
+        expect(result.sign).toEqual('Virgo');
+      });
+
+      it('should return Virgo end Astronomical', () => {
+        const result = service.getFauxScopes(new Date('10/31/01'))[SignConstants.Astronomical];
+
+        expect(result.sign).toEqual('Virgo');
+      });
     });
   });
 });

@@ -33,9 +33,11 @@ export class FauxScopeService {
   private getAstronomical(birthDate: Date): IScope {
     const day = birthDate.getDate();
     const month = this.getMonth(birthDate);
-    
+
     let bestMatch = null;
 
+    // we have to find the best match here because the new scopes
+    // overlap on their beginning and end months.
     for (const faux of this.fauxScopes) {
       if ((day >=  faux.astronomicalStartDay && month === faux.astronomicalStartMonth)
       || (day <= faux.astronomicalEndDay && month === faux.astronomicalEndMonth)) {
