@@ -35,6 +35,9 @@ export class FauxScopeService {
 
     let bestMatch: IScope = null;
 
+    // in the astronomical sense libra is special.
+    // it occupies the same month as scorpius and it will be skipped
+    // by the for loop below.
     if (this.isLibraAstronomical(birthDate)) {
       return this.fauxScopes.find(fs => fs.sign === 'Libra');
     }
