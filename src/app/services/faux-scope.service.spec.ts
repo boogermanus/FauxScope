@@ -286,6 +286,54 @@ describe('FauxScopeService', () => {
 
         expect(result.sign).toEqual('Ophiuchus');
       });
+
+      it('should return Sagittarius start Astronomical', () => {
+        const result = service.getFauxScopes(new Date('12/19/01'))[SignConstants.Astronomical];
+
+        expect(result.sign).toEqual('Sagittarius');
+      });
+
+      it('should return Sagittarius end Astronomical', () => {
+        const result = service.getFauxScopes(new Date('01/19/01'))[SignConstants.Astronomical];
+
+        expect(result.sign).toEqual('Sagittarius');
+      });
+
+      it('should return Capricorn start Astronomical', () => {
+        const result = service.getFauxScopes(new Date('01/20/01'))[SignConstants.Astronomical];
+
+        expect(result.sign).toEqual('Capricorn');
+      });
+
+      it('should return Capricorn end Astronomical', () => {
+        const result = service.getFauxScopes(new Date('02/16/01'))[SignConstants.Astronomical];
+
+        expect(result.sign).toEqual('Capricorn');
+      });
+
+      it('should return Aquarius start Astronomical', () => {
+        const result = service.getFauxScopes(new Date('02/17/01'))[SignConstants.Astronomical];
+
+        expect(result.sign).toEqual('Aquarius');
+      });
+
+      it('should return Aquarius end Astronomical', () => {
+        const result = service.getFauxScopes(new Date('03/11/01'))[SignConstants.Astronomical];
+
+        expect(result.sign).toEqual('Aquarius');
+      });
+
+      it('should return Pisces start Astronomical', () => {
+        const result = service.getFauxScopes(new Date('03/12/01'))[SignConstants.Astronomical];
+
+        expect(result.sign).toEqual('Pisces');
+      });
+
+      it('should return Pisces end Astronomical', () => {
+        const result = service.getFauxScopes(new Date('04/18/01'))[SignConstants.Astronomical];
+
+        expect(result.sign).toEqual('Pisces');
+      });
     });
   });
 });
