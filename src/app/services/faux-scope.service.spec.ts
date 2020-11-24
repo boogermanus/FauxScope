@@ -262,6 +262,18 @@ describe('FauxScopeService', () => {
 
         expect(result.sign).toEqual('Libra');
       });
+
+      it('should return Scorpius start Astronomical', () => {
+        const result = service.getFauxScopes(new Date('11/24/01'))[SignConstants.Astronomical];
+
+        expect(result.sign).toEqual('Scorpius');
+      });
+
+      it('should return Scorpius end Astronomical', () => {
+        const result = service.getFauxScopes(new Date('11/30/01'))[SignConstants.Astronomical];
+
+        expect(result.sign).toEqual('Scorpius');
+      });
     });
   });
 });
