@@ -274,6 +274,18 @@ describe('FauxScopeService', () => {
 
         expect(result.sign).toEqual('Scorpius');
       });
+
+      it('should return Ophiuchus start Astronomical', () => {
+        const result = service.getFauxScopes(new Date('12/01/01'))[SignConstants.Astronomical];
+
+        expect(result.sign).toEqual('Ophiuchus');
+      });
+
+      it('should return Ophiuchus end Astronomical', () => {
+        const result = service.getFauxScopes(new Date('12/18/01'))[SignConstants.Astronomical];
+
+        expect(result.sign).toEqual('Ophiuchus');
+      });
     });
   });
 });
