@@ -33,7 +33,11 @@ export class FauxScopeService {
     const day = birthDate.getDate();
     const month = this.getMonth(birthDate);
 
-    let bestMatch = null;
+    let bestMatch: IScope = null;
+
+    if (this.isLibraAstronomical(birthDate)) {
+      return this.fauxScopes.find(fs => fs.sign === 'Libra');
+    }
 
     // we have to find the best match here because the new scopes
     // overlap on their beginning and end months.
@@ -45,5 +49,14 @@ export class FauxScopeService {
     }
 
     return bestMatch;
+  }
+
+  private isLibraAstronomical(date: Date): boolean {
+    const day = date.getDate();
+    const month = this.getMonth(date);
+    const libra = this.fauxScopes.find(fs => fs.sign === 'Libra');
+
+    return day >= libra.astronomicalStartDay && day <= libra.astronomicalEndDay &&
+      month === libra.astronomicalStartMonth;
   }
 }
