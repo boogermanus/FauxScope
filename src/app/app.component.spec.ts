@@ -25,4 +25,13 @@ describe('AppComponent', () => {
     const app = fixture.componentInstance;
     expect(app.title).toEqual('FauxScope');
   });
+
+  it('should have faux-date-picker', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    fixture.detectChanges();
+    const element = fixture.nativeElement.querySelector('app-faux-date-picker');
+
+    expect(element).not.toBeNull();
+  });
 });
