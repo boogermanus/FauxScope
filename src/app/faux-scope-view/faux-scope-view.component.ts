@@ -19,9 +19,10 @@ export class FauxScopeViewComponent implements OnInit {
     return this.scope?.meaning ?? '';
   }
 
-  public get scopeDuration(): number {
-    return this.scope?.duration ?? 0;
-  }
+  // removed for now
+  // public get scopeDuration(): number {
+  //   return this.scope?.duration ?? 0;
+  // }
 
   public get scopeSignImageUrl(): string {
     return this.scope?.signImageUrl ?? '';
