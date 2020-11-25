@@ -4,16 +4,16 @@
             <div class="col-sm-5">
                 <mat-form-field>
                     <mat-label>Birth Month</mat-label>
-                    <mat-select>
-                        <mat-option *ngFor="let month of months" [value]="month" (onSelectionChange)="onMonthSelected($event)">{{month}}</mat-option>
+                    <mat-select (valueChange)="onMonthSelected($event)" [(value)]="selectedMonth">
+                        <mat-option *ngFor="let month of months" [value]="month">{{month}}</mat-option>
                     </mat-select>
                 </mat-form-field>
             </div>
             <div class="col-sm-5">
                 <mat-form-field>
-                    <mat-label>Birth Date</mat-label>
-                    <mat-select >
-                        <mat-option *ngFor="let day of days" [value]="day">{{day}}</mat-option>
+                    <mat-label>Birth Day</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let day of daysFilter" [value]="day">{{day}}</mat-option>
                     </mat-select>
                 </mat-form-field>
             </div>

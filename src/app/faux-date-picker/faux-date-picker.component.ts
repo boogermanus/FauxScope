@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatSelectChange } from '@angular/material/select';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { MatSelect, MatSelectChange } from '@angular/material/select';
 import { DaysService } from '../services/days-service';
 
 @Component({
@@ -11,16 +11,15 @@ export class FauxDatePickerComponent implements OnInit {
 
   // 1 to 12
   months: number[] = [...Array(12).keys()].map(i => i + 1);
-  days: number[];
-
+  daysFilter: number[];
   constructor(private daysService: DaysService) { }
 
   ngOnInit(): void {
 
   }
 
-  onMonthSelected(select: MatSelectChange): void {
-    this.days = this.daysService.getDays(select.source.value);
+  onMonthSelected(month: number): void {
+    this.daysFilter = this.daysService.getDays(month);
   }
 
 }
