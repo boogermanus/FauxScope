@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class DaysServiceService {
+export class DaysService {
 
   public readonly thirtyDayMonths = [4, 6, 9, 11];
   public readonly thirtyOneDayMonths = [1, 3, 5, 7, 8, 10, 12];
