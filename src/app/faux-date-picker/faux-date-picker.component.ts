@@ -20,7 +20,7 @@ export class FauxDatePickerComponent implements OnInit {
   }
 
   onMonthSelected(select: MatSelectChange): void {
-    
+    this.days = this.daysService.getDays(select.value);
   }
 
 }
