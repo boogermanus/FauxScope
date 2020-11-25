@@ -11,7 +11,8 @@ export class FauxDatePickerComponent implements OnInit {
 
   // 1 to 12
   months: number[] = [...Array(12).keys()].map(i => i + 1);
-  daysFilter: number[];
+  days: number[];
+  @ViewChild('birthDay')birthDay: MatSelect;
   constructor(private daysService: DaysService) { }
 
   ngOnInit(): void {
@@ -19,7 +20,8 @@ export class FauxDatePickerComponent implements OnInit {
   }
 
   onMonthSelected(month: number): void {
-    this.daysFilter = this.daysService.getDays(month);
+    this.days = this.daysService.getDays(month);
+    this.birthDay.disabled = false;
   }
 
 }

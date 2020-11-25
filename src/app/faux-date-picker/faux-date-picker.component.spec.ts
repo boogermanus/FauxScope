@@ -25,7 +25,12 @@ describe('FauxDatePickerComponent', () => {
   });
 
   it('onMonthSelected should load days', () => {
-    component.onMonthSelected(new MatSelectChange(null, 1));
+    component.onMonthSelected(1);
     expect(component.days).toBeDefined();
-  })
+  });
+
+  it('onMonthSelected should enable birthDate', () => {
+    component.onMonthSelected(1);
+    expect(component.birthDay.disabled).toBeFalse();
+  });
 });
