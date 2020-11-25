@@ -14,7 +14,7 @@ describe('FauxScopeService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should have method GetFauxScopes', () => {
+  it('should have method getFauxScopes', () => {
     expect(service.getFauxScopes).toBeDefined();
   });
 
