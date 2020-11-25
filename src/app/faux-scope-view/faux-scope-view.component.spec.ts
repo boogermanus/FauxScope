@@ -51,9 +51,11 @@ describe('FauxScopeViewComponent', () => {
     expect(element.textContent).toEqual(scope.meaning);
   });
 
-  it(`should have scopeDuration equal to ${scope.duration} days`, () => {
-    const element = fixture.nativeElement.querySelector('#duration');
+  // removed as it seemed pointless to show this for both scopes
+  // as the duration is always the same
+  // it(`should have scopeDuration equal to ${scope.duration} days`, () => {
+  //   const element = fixture.nativeElement.querySelector('#duration');
 
-    expect(element.textContent).toEqual(`${scope.duration} days`);
-  });
+  //   expect(element.textContent).toEqual(`${scope.duration} days`);
+  // });
 });
