@@ -7,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FauxDatePickerComponent implements OnInit {
 
-  months: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  // 1 to 12
+  months: number[] = [...Array(12).keys()].map(i => i + 1);
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
