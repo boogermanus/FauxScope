@@ -1,16 +1,16 @@
 <mat-card class="mt-2">
     <mat-card-content>
-        <div class="row d-flex justify-content-center">
-            <div class="col-sm-5">
-                <mat-form-field>
+        <div class="d-flex flex-row justify-content-around">
+            <div>
+                <mat-form-field style="max-width: 100px;">
                     <mat-label>Birth Month</mat-label>
                     <mat-select (valueChange)="onMonthSelected($event)">
                         <mat-option *ngFor="let month of months" [value]="month">{{month}}</mat-option>
                     </mat-select>
                 </mat-form-field>
             </div>
-            <div class="col-sm-5">
-                <mat-form-field>
+            <div class='ml-2'>
+                <mat-form-field style="max-width: 100px">
                     <mat-label>Birth Day</mat-label>
                     <mat-select [disabled]="true" #birthDay>
                         <mat-option *ngFor="let day of days" [value]="day">{{day}}</mat-option>
