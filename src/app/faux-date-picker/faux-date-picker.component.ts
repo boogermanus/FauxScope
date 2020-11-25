@@ -1,4 +1,4 @@
-import { EventEmitter } from '@angular/core';
+import { EventEmitter, Output } from '@angular/core';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatSelect, MatSelectChange } from '@angular/material/select';
 import { IFauxDatePickerSelection } from '../models/ifaux-date-picker-selection';
@@ -14,8 +14,9 @@ export class FauxDatePickerComponent implements OnInit {
   // 1 to 12
   months: number[] = [...Array(12).keys()].map(i => i + 1);
   days: number[];
+  month: number
   @ViewChild('birthDay')birthDay: MatSelect;
-  selections: EventEmitter<IFauxDatePickerSelection> = new EventEmitter<IFauxDatePickerSelection>();
+  @Output()selections: EventEmitter<IFauxDatePickerSelection> = new EventEmitter<IFauxDatePickerSelection>();
   constructor(private daysService: DaysService) { }
 
   ngOnInit(): void {
@@ -27,9 +28,9 @@ export class FauxDatePickerComponent implements OnInit {
     this.birthDay.disabled = false;
   }
 
-  public onDateSelected(day: number): void {
+  public onDaySelected(day: number): void {
     this.selections.emit({
-      month: this.birthDay.value,
+      month: this.month,
       day
     });
   }

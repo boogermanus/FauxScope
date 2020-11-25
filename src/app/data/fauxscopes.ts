@@ -101,7 +101,7 @@ const fauxscopes: IScope[] = [
     },
     {
         sign: 'Scorpius',
-        signImageUrl: 'assets/Scorpius.svg',
+        signImageUrl: 'assets/Scorpio.svg',
         meaning: 'The Scorpion',
         astrologicalStartDay: 24,
         astrologicalStartMonth: 10,
