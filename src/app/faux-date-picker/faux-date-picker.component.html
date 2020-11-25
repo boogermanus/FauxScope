@@ -1,8 +1,22 @@
-<mat-card>
+<mat-card class="mt-2">
     <mat-card-content>
         <div class="row d-flex justify-content-center">
-            <div class="col-sm-4"><label>Birth Month</label></div>
-            <div class="col-sm-4"><label>Birth Day</label></div>
+            <div class="col-sm-4">
+                <mat-form-field>
+                    <mat-label>Birth Month</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let month of months" [value]="month">{{month}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-4 ml-4">
+                <mat-form-field>
+                    <mat-label>Birth Date</mat-label>
+                    <mat-select>
+                        <mat-option>test</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
         </div>
     </mat-card-content>
 </mat-card>
