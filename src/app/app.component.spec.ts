@@ -35,4 +35,28 @@ describe('AppComponent', () => {
 
     expect(element).not.toBeNull();
   });
+
+  it('should have faux-scope-viewer with id astrological', () => {
+    const element = fixture.nativeElement.querySelector('app-faux-scope-view#astrological');
+
+    expect(element).not.toBeNull();
+  });
+
+  it('should have faux-scope-viewer with id astronomical', () => {
+    const element = fixture.nativeElement.querySelector('app-faux-scope-view#astronomical');
+
+    expect(element).not.toBeNull();
+  });
+
+  it('should set astrological when selectionMade is called', () => {
+    component.selectionMade({month: 1, day: 1});
+
+    expect(component.astrological).not.toBeUndefined();
+  });
+
+  it('should set astronomical when selectionMade is called', () => {
+    component.selectionMade({month: 1, day: 1});
+
+    expect(component.astronomical).not.toBeUndefined();
+  });
 });
