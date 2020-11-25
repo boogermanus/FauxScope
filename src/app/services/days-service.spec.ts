@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { DaysService } from './days-service';
 
-describe('DaysServiceService', () => {
+describe('DaysService', () => {
   let service: DaysService;
 
   beforeEach(() => {
@@ -19,23 +19,26 @@ describe('DaysServiceService', () => {
   });
 
   describe('getDays()', () => {
-    it('should return 29 for 2', () => {
-      expect(service.getDays(2)).toEqual(29);
+    it('should return array with length 29', () => {
+      const result = service.getDays(2);
+      expect(result.length).toEqual(29);
     });
 
-    it('should return 31 for 1,3,5,7,8,10,12', () => {
+    it('should return array with length 31', () => {
       const months = [1, 3, 5, 7, 8, 10, 12];
 
       for (const month of months) {
-        expect(service.getDays(month)).toEqual(31);
+        const result = service.getDays(month);
+        expect(result.length).toEqual(31);
       }
     });
 
-    it('should return 30 for 4,6,9,11', () => {
+    it('should return array with length 30', () => {
       const months = [4, 6, 9, 11];
 
       for ( const month of months) {
-        expect(service.getDays(month)).toEqual(30);
+        const result = service.getDays(month);
+        expect(result.length).toEqual(30);
       }
     });
   });

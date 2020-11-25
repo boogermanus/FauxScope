@@ -6,22 +6,26 @@ import { Injectable } from '@angular/core';
 export class DaysService {
 
   public readonly thirtyDayMonths = [4, 6, 9, 11];
+  private readonly thirtyDayMonthResults: number[] = [...Array(30).keys()].map(i => i + 1);
   public readonly thirtyOneDayMonths = [1, 3, 5, 7, 8, 10, 12];
+  private readonly thirtyOneDayMonthResults: number[] = [...Array(31).keys()].map(i => i + 1);
   public readonly twentyNineDayMonth = 2;
+  private readonly twentyNineDayMonthResults: number [] = [...Array(29).keys()].map(i => i + 1);
+
   constructor() { }
 
-  public getDays(month: number): number {
+  public getDays(month: number): number[] {
 
     if (this.isTwentyNineDayMonth(month)) {
-      return 29;
+      return this.twentyNineDayMonthResults;
     }
 
     if (this.isThirtyDayMonth(month)) {
-      return 30;
+      return this.thirtyDayMonthResults;
     }
 
     if (this.isThirtyOneDayMonth(month)) {
-      return 31;
+      return this.thirtyOneDayMonthResults;
     }
   }
 
