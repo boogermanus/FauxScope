@@ -8,8 +8,24 @@ import { IScope } from '../models/iscope';
 })
 export class FauxScopeViewComponent implements OnInit {
 
-  @Input()fauxScope: IScope;
+  @Input()scope: IScope = {sign: 'test', meaning: 'test meaning', duration: 10, signImageUrl: 'assets/Leo.svg'}; // = null;
   @Input()headerText: string;
+
+  public get scopeName(): string {
+    return this.scope?.sign ?? '';
+  }
+
+  public get scopeMeaning(): string {
+    return this.scope?.meaning ?? '';
+  }
+
+  public get scopeDuration(): number {
+    return this.scope?.duration ?? 0;
+  }
+
+  public get scopeSignImageUrl(): string {
+    return this.scope?.signImageUrl ?? '';
+  }
   constructor() { }
 
   ngOnInit(): void {

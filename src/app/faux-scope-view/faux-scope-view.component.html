@@ -1,1 +1,25 @@
-<p>faux-scope-view works!</p>
+<mat-card class="mt-2">
+    <mat-card-header>
+        <mat-card-title>{{headerText}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="row d-flex justify-content-center">
+            <img [src]="scopeSignImageUrl" height="20%" width="20%">
+        </div>
+        <div class="row d-flex justify-content-center">
+            <h1>{{scopeName}}</h1>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <label>Meaning:</label>
+            </div>
+            <div class="col-4" id="meaning">{{scopeMeaning}}</div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <label>Duration:</label>
+            </div>
+            <div class="col-4" id="duration">{{scopeDuration}} days</div>
+        </div>
+    </mat-card-content>
+</mat-card>
