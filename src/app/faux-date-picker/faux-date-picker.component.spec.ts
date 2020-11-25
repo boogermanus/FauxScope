@@ -33,4 +33,17 @@ describe('FauxDatePickerComponent', () => {
     component.onMonthSelected(1);
     expect(component.birthDay.disabled).toBeFalse();
   });
+
+  it('onDateSelected should emit when called', () => {
+    spyOn(component.selections, 'emit');
+
+    component.birthDay.value = 1;
+    component.onDateSelected(1);
+
+    expect(component.selections.emit).toHaveBeenCalledWith({
+      month: 1,
+      day: 1
+    });
+
+  });
 });
