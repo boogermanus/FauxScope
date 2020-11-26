@@ -45,6 +45,16 @@ describe('AppComponent', () => {
     expect(element.hidden).toBeTrue();
   });
 
+  it('should show faux-scope-view after onSelectionMade', () => {
+    component.onSelectionMade({
+      month: 1,
+      day: 1
+    });
+    fixture.detectChanges();
+    const element = fixture.nativeElement.querySelector('app-faux-scope-view#astrological');
+    expect(element.hidden).toBeFalse();
+  });
+
   it('should have faux-scope-viewer with id astronomical', () => {
     const element = fixture.nativeElement.querySelector('app-faux-scope-view#astronomical');
     expect(element).not.toBeNull();
