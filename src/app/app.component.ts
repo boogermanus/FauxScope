@@ -13,6 +13,7 @@ export class AppComponent {
   title = 'FauxScope';
   astrological: IScope;
   astronomical: IScope;
+  show = false;
 
   constructor(private fauxScopeService: FauxScopeService) { }
 

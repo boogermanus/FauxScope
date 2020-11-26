@@ -32,31 +32,31 @@ describe('AppComponent', () => {
 
   it('should have faux-date-picker', () => {
     const element = fixture.nativeElement.querySelector('app-faux-date-picker');
-
     expect(element).not.toBeNull();
   });
 
   it('should have faux-scope-viewer with id astrological', () => {
     const element = fixture.nativeElement.querySelector('app-faux-scope-view#astrological');
-
     expect(element).not.toBeNull();
+  });
+
+  it('should hide faux-scope-view initially', () => {
+    const element = fixture.nativeElement.querySelector('app-faux-scope-view#astrological');
+    expect(element.hidden).toBeTrue();
   });
 
   it('should have faux-scope-viewer with id astronomical', () => {
     const element = fixture.nativeElement.querySelector('app-faux-scope-view#astronomical');
-
     expect(element).not.toBeNull();
   });
 
   it('should set astrological when onSelectionMade is called', () => {
     component.onSelectionMade({month: 1, day: 1});
-
     expect(component.astrological).not.toBeUndefined();
   });
 
   it('should set astronomical when onSelectionMade is called', () => {
     component.onSelectionMade({month: 1, day: 1});
-
     expect(component.astronomical).not.toBeUndefined();
   });
 });
