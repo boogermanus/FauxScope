@@ -9,9 +9,9 @@ describe('FauxDatePickerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FauxDatePickerComponent ]
+      declarations: [FauxDatePickerComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -44,6 +44,13 @@ describe('FauxDatePickerComponent', () => {
       month: 1,
       day: 1
     });
+  });
 
+  it('onInputsReset should emit when called', () => {
+    spyOn(component.inputsReset, 'emit');
+
+    component.onInputsReset();
+
+    expect(component.inputsReset.emit).toHaveBeenCalled();
   });
 });

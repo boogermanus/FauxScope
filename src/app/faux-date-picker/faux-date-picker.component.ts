@@ -17,6 +17,7 @@ export class FauxDatePickerComponent implements OnInit {
   month: number;
   @ViewChild('birthDay') birthDay: MatSelect;
   @Output()selectionMade: EventEmitter<IFauxDatePickerSelection> = new EventEmitter<IFauxDatePickerSelection>();
+  @Output()inputsReset: EventEmitter<void> = new EventEmitter<void>();
   constructor(private daysService: DaysService) { }
 
   ngOnInit(): void {
@@ -37,5 +38,9 @@ export class FauxDatePickerComponent implements OnInit {
       month: this.month,
       day
     });
+  }
+
+  public onInputsReset(): void {
+    this.inputsReset.emit();
   }
 }
