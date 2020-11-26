@@ -17,7 +17,7 @@ export class AppComponent {
   constructor(private fauxScopeService: FauxScopeService) {
 
   }
-  public selectionMade(selection: IFauxDatePickerSelection): void {
+  public onSelectionMade(selection: IFauxDatePickerSelection): void {
     const date = new Date();
     date.setDate(selection.day);
     date.setMonth(selection.month - 1);

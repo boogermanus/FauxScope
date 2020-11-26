@@ -35,12 +35,12 @@ describe('FauxDatePickerComponent', () => {
   });
 
   it('onDaySelected should emit when called', () => {
-    spyOn(component.selections, 'emit');
+    spyOn(component.selectionMade, 'emit');
 
     component.month = 1;
     component.onDaySelected(1);
 
-    expect(component.selections.emit).toHaveBeenCalledWith({
+    expect(component.selectionMade.emit).toHaveBeenCalledWith({
       month: 1,
       day: 1
     });
