@@ -36,10 +36,8 @@ describe('FauxDatePickerComponent', () => {
 
   it('onDaySelected should emit when called', () => {
     spyOn(component.selectionMade, 'emit');
-
     component.month = 1;
     component.onDaySelected(1);
-
     expect(component.selectionMade.emit).toHaveBeenCalledWith({
       month: 1,
       day: 1
@@ -48,9 +46,7 @@ describe('FauxDatePickerComponent', () => {
 
   it('onInputsReset should emit when called', () => {
     spyOn(component.inputsReset, 'emit');
-
     component.onInputsReset();
-
     expect(component.inputsReset.emit).toHaveBeenCalled();
   });
 
@@ -68,7 +64,6 @@ describe('FauxDatePickerComponent', () => {
 
   it('should have button reset', () => {
     const button = fixture.nativeElement.querySelector('button#reset');
-
     expect(button).not.toBeNull();
   });
 });
