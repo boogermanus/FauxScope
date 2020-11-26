@@ -70,5 +70,5 @@ describe('FauxDatePickerComponent', () => {
     const button = fixture.nativeElement.querySelector('button#reset');
 
     expect(button).not.toBeNull();
-  })
+  });
 });
