@@ -12,19 +12,20 @@ import { DaysService } from '../services/days-service';
 export class FauxDatePickerComponent implements OnInit {
 
   // 1 to 12
-  months: number[] = [...Array(12).keys()].map(i => i + 1);
-  days: number[];
-  month: number;
-  @ViewChild('birthDay') birthDay: MatSelect;
+  public months: number[] = [...Array(12).keys()].map(i => i + 1);
+  public days: number[];
+  public month: number;
+  @ViewChild('birthDay')birthDay: MatSelect;
   @Output()selectionMade: EventEmitter<IFauxDatePickerSelection> = new EventEmitter<IFauxDatePickerSelection>();
-  @Output()inputsReset: EventEmitter<void> = new EventEmitter<void>();
+  @Output()public inputsReset: EventEmitter<void> = new EventEmitter<void>();
+
   constructor(private daysService: DaysService) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
 
   }
 
-  onMonthSelected(month: number): void {
+  public onMonthSelected(month: number): void {
     this.days = this.daysService.getDays(month);
     this.birthDay.disabled = false;
 

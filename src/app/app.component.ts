@@ -14,9 +14,8 @@ export class AppComponent {
   astrological: IScope;
   astronomical: IScope;
 
-  constructor(private fauxScopeService: FauxScopeService) {
+  constructor(private fauxScopeService: FauxScopeService) { }
 
-  }
   public onSelectionMade(selection: IFauxDatePickerSelection): void {
     const date = new Date();
     date.setDate(selection.day);

@@ -48,13 +48,13 @@ describe('AppComponent', () => {
     expect(element).not.toBeNull();
   });
 
-  it('should set astrological when selectionMade is called', () => {
+  it('should set astrological when onSelectionMade is called', () => {
     component.onSelectionMade({month: 1, day: 1});
 
     expect(component.astrological).not.toBeUndefined();
   });
 
-  it('should set astronomical when selectionMade is called', () => {
+  it('should set astronomical when onSelectionMade is called', () => {
     component.onSelectionMade({month: 1, day: 1});
 
     expect(component.astronomical).not.toBeUndefined();
