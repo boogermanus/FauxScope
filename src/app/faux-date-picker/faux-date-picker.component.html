@@ -13,7 +13,7 @@
             <div class='ml-2'>
                 <mat-form-field style="max-width: 100px">
                     <mat-label>Birth Day</mat-label>
-                    <mat-select [disabled]="true" #birthDay (valueChange)="onDaySelected($event)">
+                    <mat-select [disabled]="true" #birthDay (valueChange)="onDaySelected($event)" [(value)]="day">
                         <mat-option *ngFor="let day of days" [value]="day">{{day}}</mat-option>
                     </mat-select>
                 </mat-form-field>
@@ -21,6 +21,6 @@
         </div>
     </mat-card-content>
     <mat-card-actions>
-        <button mat-raised-button>Reset</button>
+        <button id="reset" mat-raised-button (click)="onInputsReset()">Reset</button>
     </mat-card-actions>
 </mat-card>

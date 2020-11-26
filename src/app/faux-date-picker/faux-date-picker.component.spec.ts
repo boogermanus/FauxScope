@@ -53,4 +53,22 @@ describe('FauxDatePickerComponent', () => {
 
     expect(component.inputsReset.emit).toHaveBeenCalled();
   });
+
+  it('onInputsReset should change month to undefined', () => {
+    component.month = 1;
+    component.onInputsReset();
+    expect(component.month).toBeUndefined();
+  });
+
+  it('onInputsReset should change day to undefined', () => {
+    component.day = 1;
+    component.onInputsReset();
+    expect(component.day).toBeUndefined();
+  });
+
+  it('should have button reset', () => {
+    const button = fixture.nativeElement.querySelector('button#reset');
+
+    expect(button).not.toBeNull();
+  })
 });

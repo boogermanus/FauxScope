@@ -15,6 +15,7 @@ export class FauxDatePickerComponent implements OnInit {
   public months: number[] = [...Array(12).keys()].map(i => i + 1);
   public days: number[];
   public month: number;
+  public day: number;
   @ViewChild('birthDay')birthDay: MatSelect;
   @Output()selectionMade: EventEmitter<IFauxDatePickerSelection> = new EventEmitter<IFauxDatePickerSelection>();
   @Output()public inputsReset: EventEmitter<void> = new EventEmitter<void>();
@@ -29,8 +30,8 @@ export class FauxDatePickerComponent implements OnInit {
     this.days = this.daysService.getDays(month);
     this.birthDay.disabled = false;
 
-    if (this.birthDay.value !== undefined) {
-      this.onDaySelected(this.birthDay.value);
+    if (this.day !== undefined) {
+      this.onDaySelected(this.day);
     }
   }
 
@@ -42,6 +43,8 @@ export class FauxDatePickerComponent implements OnInit {
   }
 
   public onInputsReset(): void {
+    this.month = undefined;
+    this.day = undefined;
     this.inputsReset.emit();
   }
 }
