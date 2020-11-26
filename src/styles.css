@@ -10,14 +10,6 @@ body {
     background-color: #093C58;
  }
 
- .primary-header {
-    color: #28546C
- }
-
- .secondary-header {
-    color: #517080
- }
-
 /* color scheme as defined by a picker */
 .color-primary-0 { color: #28546C }	/* Main Primary color */
 .color-primary-1 { color: #517080 }
