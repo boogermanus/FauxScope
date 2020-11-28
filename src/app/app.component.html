@@ -1,5 +1,6 @@
 <div class="container">
-    <app-faux-date-picker (selectionMade)="onSelectionMade($event)"></app-faux-date-picker>
-    <app-faux-scope-view headerText="Astrological Sign" id="astrological" [scope]="astrological" [hidden]="noSelection"></app-faux-scope-view>
-    <app-faux-scope-view headerText="Astronomical Sign" id="astronomical" [scope]="astronomical"></app-faux-scope-view>
+    <app-faux-date-picker (selectionMade)="onSelectionMade($event)" (inputsReset)="onReset()"></app-faux-date-picker>
+    <app-faux-scope-view headerText="Astrological Sign" id="astrological" [scope]="astrological" [hidden]="noSelection">
+    </app-faux-scope-view>
+    <app-faux-scope-view headerText="Astronomical Sign" id="astronomical" [scope]="astronomical" [hidden]="noSelection"></app-faux-scope-view>
 </div>

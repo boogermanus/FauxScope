@@ -13,7 +13,6 @@ export class AppComponent {
   title = 'FauxScope';
   astrological: IScope;
   astronomical: IScope;
-  show = false;
   public noSelection = true;
 
   constructor(private fauxScopeService: FauxScopeService) { }
@@ -27,5 +26,9 @@ export class AppComponent {
     this.astrological = result[SignConstants.Astrological];
     this.astronomical = result[SignConstants.Astronomical];
     this.noSelection = false;
+  }
+
+  public onReset(): void {
+    this.noSelection = true;
   }
 }

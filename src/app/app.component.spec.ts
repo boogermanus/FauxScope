@@ -64,4 +64,11 @@ describe('AppComponent', () => {
     component.onSelectionMade({month: 1, day: 1});
     expect(component.astronomical).not.toBeUndefined();
   });
+
+  it('should set noSelection to true onReset', () => {
+    component.noSelection = false;
+    component.onReset();
+
+    expect(component.noSelection).toBeTrue();
+  });
 });
