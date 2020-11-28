@@ -45,16 +45,6 @@ describe('AppComponent', () => {
     expect(element.hidden).toBeTrue();
   });
 
-  it('should show faux-scope-view#astrological after onSelectionMade', () => {
-    component.onSelectionMade({
-      month: 1,
-      day: 1
-    });
-    fixture.detectChanges();
-    const element = fixture.nativeElement.querySelector('app-faux-scope-view#astrological');
-    expect(element.hidden).toBeFalse();
-  });
-
   it('should have faux-scope-viewer with id astronomical', () => {
     const element = fixture.nativeElement.querySelector('app-faux-scope-view#astronomical');
     expect(element).not.toBeNull();
@@ -65,30 +55,44 @@ describe('AppComponent', () => {
     expect(element.hidden).toBeTrue();
   });
 
-  it('should show faux-scope-view#astronomical after onSelectionMade', () => {
-    component.onSelectionMade({
-      month: 1,
-      day: 1
+  describe('onSelectionMade()', () => {
+    it('should show faux-scope-view#astrological after onSelectionMade', () => {
+      component.onSelectionMade({
+        month: 1,
+        day: 1
+      });
+      fixture.detectChanges();
+      const element = fixture.nativeElement.querySelector('app-faux-scope-view#astrological');
+      expect(element.hidden).toBeFalse();
     });
-    fixture.detectChanges();
-    const element = fixture.nativeElement.querySelector('app-faux-scope-view#astronomical');
-    expect(element.hidden).toBeFalse();
+
+    it('should show faux-scope-view#astronomical after onSelectionMade', () => {
+      component.onSelectionMade({
+        month: 1,
+        day: 1
+      });
+      fixture.detectChanges();
+      const element = fixture.nativeElement.querySelector('app-faux-scope-view#astronomical');
+      expect(element.hidden).toBeFalse();
+    });
+
+    it('should set astrological when onSelectionMade is called', () => {
+      component.onSelectionMade({ month: 1, day: 1 });
+      expect(component.astrological).not.toBeUndefined();
+    });
+
+    it('should set astronomical when onSelectionMade is called', () => {
+      component.onSelectionMade({ month: 1, day: 1 });
+      expect(component.astronomical).not.toBeUndefined();
+    });
   });
 
-  it('should set astronomical when onSelectionMade is called', () => {
-    component.onSelectionMade({month: 1, day: 1});
-    expect(component.astronomical).not.toBeUndefined();
-  });
+  describe('onReset()', () => {
+    it('should set noSelection to true onReset', () => {
+      component.noSelection = false;
+      component.onReset();
 
-  it('should set astrological when onSelectionMade is called', () => {
-    component.onSelectionMade({month: 1, day: 1});
-    expect(component.astrological).not.toBeUndefined();
-  });
-
-  it('should set noSelection to true onReset', () => {
-    component.noSelection = false;
-    component.onReset();
-
-    expect(component.noSelection).toBeTrue();
+      expect(component.noSelection).toBeTrue();
+    });
   });
 });

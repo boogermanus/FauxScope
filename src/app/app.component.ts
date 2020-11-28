@@ -10,9 +10,9 @@ import { FauxScopeService } from './services/faux-scope.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'FauxScope';
-  astrological: IScope;
-  astronomical: IScope;
+  public title = 'FauxScope';
+  public astrological: IScope;
+  public astronomical: IScope;
   public noSelection = true;
 
   constructor(private fauxScopeService: FauxScopeService) { }
