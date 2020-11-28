@@ -60,9 +60,29 @@ describe('AppComponent', () => {
     expect(element).not.toBeNull();
   });
 
+  it('should hide faux-scope-view astronomical initially', () => {
+    const element = fixture.nativeElement.querySelector('app-faux-scope-view#astronomical');
+    expect(element.hidden).toBeTrue();
+  });
+
+  it('should show faux-scope-view#astronomical after onSelectionMade', () => {
+    component.onSelectionMade({
+      month: 1,
+      day: 1
+    });
+    fixture.detectChanges();
+    const element = fixture.nativeElement.querySelector('app-faux-scope-view#astronomical');
+    expect(element.hidden).toBeFalse();
+  });
+
   it('should set astronomical when onSelectionMade is called', () => {
     component.onSelectionMade({month: 1, day: 1});
     expect(component.astronomical).not.toBeUndefined();
+  });
+
+  it('should set astrological when onSelectionMade is called', () => {
+    component.onSelectionMade({month: 1, day: 1});
+    expect(component.astrological).not.toBeUndefined();
   });
 
   it('should set noSelection to true onReset', () => {
