@@ -1,5 +1,5 @@
 <mat-accordion>
-    <mat-expansion-panel class="mt-2" [expanded]="true">
+    <mat-expansion-panel class="mt-2" [expanded]="expanded" (afterCollapse)="onCollapse()">
         <mat-expansion-panel-header>
             <mat-panel-title style="font-weight: bold;">About</mat-panel-title>
         </mat-expansion-panel-header>

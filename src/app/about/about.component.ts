@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SettingsService } from '../services/settings.service';
 
 @Component({
   selector: 'app-about',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  expanded = true;
+  constructor(private settingsService: SettingsService) { }
 
   ngOnInit(): void {
+    this.expanded = this.settingsService.get();
   }
 
+  public onCollapse(): void {
+    this.expanded = false;
+    this.settingsService.save();
+  }
 }
