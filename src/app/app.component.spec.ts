@@ -55,6 +55,11 @@ describe('AppComponent', () => {
     expect(element.hidden).toBeTrue();
   });
 
+  it('should have about', () => {
+    const element = fixture.nativeElement.querySelector('app-about#about');
+    expect(element).not.toBeNull();
+  })
+
   describe('onSelectionMade()', () => {
     it('should show faux-scope-view#astrological after onSelectionMade', () => {
       component.onSelectionMade({
