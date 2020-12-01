@@ -13,12 +13,12 @@ export class SettingsService {
   }
 
   public get(): boolean {
-    const collapse = localStorage.getItem(this.KEY);
+    const expanded = localStorage.getItem(this.KEY);
 
-    if (collapse === null) {
+    if (expanded === null) {
       return true;
     }
 
-    return false;
+    return expanded === 'true';
   }
 }
