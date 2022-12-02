@@ -2,13 +2,13 @@ export interface IScope {
     sign: string;
     signImageUrl: string;
     meaning: string;
-    astrologicalStartDay?: number;
-    astrologicalStartMonth?: number;
-    astrologicalEndDay?: number;
-    astrologicalEndMonth?: number;
-    astronomicalStartDay?: number;
-    astronomicalStartMonth?: number;
-    astronomicalEndDay?: number;
-    astronomicalEndMonth?: number;
+    astrologicalStartDay: number | null;
+    astrologicalStartMonth: number | null;
+    astrologicalEndDay: number | null;
+    astrologicalEndMonth: number | null;
+    astronomicalStartDay: number | null;
+    astronomicalStartMonth: number | null;
+    astronomicalEndDay: number | null;
+    astronomicalEndMonth: number | null;
     duration: number;
 }
