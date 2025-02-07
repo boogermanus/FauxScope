@@ -1,6 +1,6 @@
 import { EventEmitter, Output } from '@angular/core';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatSelect } from '@angular/material/select';
+import { MatLegacySelect as MatSelect } from '@angular/material/legacy-select';
 import { IFauxDatePickerSelection } from '../models/ifaux-date-picker-selection';
 import { DaysService } from '../services/days-service';
 
