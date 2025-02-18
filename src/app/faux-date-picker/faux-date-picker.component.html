@@ -1,5 +1,5 @@
 <mat-card class="mt-2">
-    <mat-card-title class="color-primary-0">Choose Birth Month & Year</mat-card-title>
+    <mat-card-title class="color-primary-0 ms-2">Choose Birth Month & Year</mat-card-title>
     <mat-card-content>
         <div class="d-flex flex-row justify-content-around">
             <div>
@@ -10,7 +10,7 @@
                     </mat-select>
                 </mat-form-field>
             </div>
-            <div class='ml-2'>
+            <div>
                 <mat-form-field style="max-width: 150px;">
                     <mat-label>Birth Day</mat-label>
                     <mat-select [disabled]="true" #birthDay (valueChange)="onDaySelected($event)" [(value)]="day">
