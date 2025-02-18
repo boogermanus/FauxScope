@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatLegacySelectChange as MatSelectChange } from '@angular/material/legacy-select';
 
 import { FauxDatePickerComponent } from './faux-date-picker.component';
 

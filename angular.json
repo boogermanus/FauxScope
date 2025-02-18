@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "FauxScope:build:production"
+              "buildTarget": "FauxScope:build:production"
             },
             "development": {
-              "browserTarget": "FauxScope:build:development"
+              "buildTarget": "FauxScope:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "FauxScope:build"
+            "buildTarget": "FauxScope:build"
           }
         },
         "test": {
