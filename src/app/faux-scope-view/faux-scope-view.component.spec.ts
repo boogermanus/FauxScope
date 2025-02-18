@@ -2,6 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IScope } from '../models/iscope';
 
 import { FauxScopeViewComponent } from './faux-scope-view.component';
+import { MatCardModule } from '@angular/material/card';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('FauxScopeViewComponent', () => {
   let component: FauxScopeViewComponent;
@@ -11,11 +13,23 @@ describe('FauxScopeViewComponent', () => {
     signImageUrl: '',
     meaning: 'test meaning',
     duration: 1,
+    astrologicalStartDay: 1,
+    astrologicalStartMonth: 1,
+    astrologicalEndDay: 1,
+    astrologicalEndMonth: 1,
+    astronomicalStartDay: 1,
+    astronomicalStartMonth: 1,
+    astronomicalEndDay: 1,
+    astronomicalEndMonth: 1
   };
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FauxScopeViewComponent ]
+      declarations: [ FauxScopeViewComponent ],
+      imports: [
+        MatCardModule,
+        NoopAnimationsModule
+      ]
     })
     .compileComponents();
   }));

@@ -1,17 +1,25 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FauxDatePickerComponent } from './faux-date-picker.component';
+import { MatSelectModule } from '@angular/material/select';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
 
 describe('FauxDatePickerComponent', () => {
   let component: FauxDatePickerComponent;
   let fixture: ComponentFixture<FauxDatePickerComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(async() => {
     TestBed.configureTestingModule({
-      declarations: [FauxDatePickerComponent]
+      declarations: [FauxDatePickerComponent],
+      imports: [
+        MatSelectModule,
+        NoopAnimationsModule,
+        MatCardModule
+      ]
     })
       .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(FauxDatePickerComponent);
