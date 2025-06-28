@@ -2,9 +2,10 @@ import { Component, Input, OnInit } from '@angular/core';
 import { IScope } from '../models/iscope';
 
 @Component({
-  selector: 'app-faux-scope-view',
-  templateUrl: './faux-scope-view.component.html',
-  styleUrls: ['./faux-scope-view.component.css']
+    selector: 'app-faux-scope-view',
+    templateUrl: './faux-scope-view.component.html',
+    styleUrls: ['./faux-scope-view.component.css'],
+    standalone: false
 })
 export class FauxScopeViewComponent implements OnInit {
 

@@ -5,9 +5,10 @@ import { IScope } from './models/iscope';
 import { FauxScopeService } from './services/faux-scope.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css'],
+    standalone: false
 })
 export class AppComponent {
   public title = 'FauxScope';

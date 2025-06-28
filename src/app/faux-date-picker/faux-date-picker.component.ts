@@ -5,9 +5,10 @@ import { IFauxDatePickerSelection } from '../models/ifaux-date-picker-selection'
 import { DaysService } from '../services/days-service';
 
 @Component({
-  selector: 'app-faux-date-picker',
-  templateUrl: './faux-date-picker.component.html',
-  styleUrls: ['./faux-date-picker.component.css']
+    selector: 'app-faux-date-picker',
+    templateUrl: './faux-date-picker.component.html',
+    styleUrls: ['./faux-date-picker.component.css'],
+    standalone: false
 })
 export class FauxDatePickerComponent implements OnInit {
 
