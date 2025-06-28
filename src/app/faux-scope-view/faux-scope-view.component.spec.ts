@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
 import { IScope } from '../models/iscope';
 
 import { FauxScopeViewComponent } from './faux-scope-view.component';
@@ -23,7 +23,7 @@ describe('FauxScopeViewComponent', () => {
     astronomicalEndMonth: 1
   };
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ FauxScopeViewComponent ],
       imports: [
